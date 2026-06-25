@@ -1,0 +1,31 @@
+# File compilati di Java
+*.class
+*.log
+
+# Cartelle di build degli IDE (Eclipse, IntelliJ, NetBeans)
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# File di configurazione specifici di IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# File di configurazione di Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+
+# Cartelle di build di Maven/Gradle
+target/
+build/
+.gradle/
+
+# File di database locale JSON
+*.json
+
