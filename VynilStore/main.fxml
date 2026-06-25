@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-color: #0d0d0d;"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/25"
+            fx:controller="VynilStore.MainController">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox spacing="0"
+              style="-fx-background-color: #141414;
+                     -fx-border-color: #c9a84c;
+                     -fx-border-width: 0 1 0 0;
+                     -fx-pref-width: 200;">
+            <padding>
+                <Insets bottom="30" left="0" right="0" top="30" />
+            </padding>
+
+            <Label text="VYNIL STORE"
+                   style="-fx-text-fill: #c9a84c;
+                          -fx-font-size: 14px;
+                          -fx-font-weight: bold;
+                          -fx-padding: 0 0 20 20;" />
+
+            <Label style="-fx-border-color: #2a2a2a; -fx-border-width: 1 0 0 0; -fx-pref-width: 9999;" />
+
+            <Button text="🏠  HOME" maxWidth="Infinity" onAction="#handleHome"
+                    style="-fx-background-color: transparent; -fx-text-fill: #888888;
+                           -fx-font-size: 12px; -fx-alignment: CENTER-LEFT;
+                           -fx-padding: 14 20 14 20; -fx-background-radius: 0; -fx-cursor: hand;" />
+
+            <Button text="📀  CATALOGO" maxWidth="Infinity" onAction="#handleCatalogo"
+                    style="-fx-background-color: #1e1e1e; -fx-text-fill: #c9a84c;
+                           -fx-font-size: 12px; -fx-alignment: CENTER-LEFT;
+                           -fx-padding: 14 20 14 20; -fx-background-radius: 0;
+                           -fx-border-color: #c9a84c; -fx-border-width: 0 0 0 2; -fx-cursor: hand;" />
+
+            <Button text="＋  AGGIUNGI" maxWidth="Infinity" onAction="#handleAggiungi"
+                    style="-fx-background-color: transparent; -fx-text-fill: #888888;
+                           -fx-font-size: 12px; -fx-alignment: CENTER-LEFT;
+                           -fx-padding: 14 20 14 20; -fx-background-radius: 0; -fx-cursor: hand;" />
+
+            <Button text=" -  MODIFICA" maxWidth="Infinity" onAction="#handleModifica"
+                    style="-fx-background-color: transparent; -fx-text-fill: #888888;
+                           -fx-font-size: 12px; -fx-alignment: CENTER-LEFT;
+                           -fx-padding: 14 20 14 20; -fx-background-radius: 0; -fx-cursor: hand;" />
+
+            <Button text=" x  ELIMINA" maxWidth="Infinity" onAction="#handleElimina"
+                    style="-fx-background-color: transparent; -fx-text-fill: #c0392b;
+                           -fx-font-size: 12px; -fx-alignment: CENTER-LEFT;
+                           -fx-padding: 14 20 14 20; -fx-background-radius: 0; -fx-cursor: hand;" />
+
+
+        </VBox>
+    </left>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <center>
+        <VBox spacing="16" style="-fx-background-color: #0d0d0d;">
+            <padding>
+                <Insets bottom="30" left="30" right="30" top="30" />
+            </padding>
+
+            <!-- RIGA 1: titolo + ricerca + bottoni -->
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="CATALOGO"
+                       style="-fx-text-fill: #c9a84c; -fx-font-size: 22px; -fx-font-weight: bold;" />
+
+                <TextField fx:id="searchField"
+                           promptText="Cerca per titolo o artista..."
+                           style="-fx-background-color: #141414; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #444444; -fx-background-radius: 0;
+                                  -fx-border-color: #2a2a2a; -fx-border-width: 0 0 1 0;
+                                  -fx-padding: 8 12 8 12; -fx-font-size: 12px;"
+                           HBox.hgrow="ALWAYS" />
+
+
+            </HBox>
+
+            <!-- RIGA 2: filtro genere + ordinamento -->
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Genere:"
+                       style="-fx-text-fill: #555555; -fx-font-size: 11px;" />
+
+                <ComboBox fx:id="genereFilter" promptText="Tutti" onAction="#cercaEFiltra"
+                          style="-fx-background-color: #141414; -fx-font-size: 11px;
+                                 -fx-border-color: #2a2a2a; -fx-pref-width: 130;" />
+
+                <Label text="Ordina:"
+                       style="-fx-text-fill: #555555; -fx-font-size: 11px;" />
+
+                <ComboBox fx:id="sortCombo" promptText="—" onAction="#cercaEFiltra"
+                          style="-fx-background-color: #141414; -fx-font-size: 11px;
+                                 -fx-border-color: #2a2a2a; -fx-pref-width: 170;" />
+            </HBox>
+
+            <!-- Separatore -->
+            <Label style="-fx-border-color: #2a2a2a; -fx-border-width: 1 0 0 0; -fx-pref-width: 9999;" />
+
+            <!-- GRIGLIA VINILI -->
+            <ScrollPane fitToWidth="true"
+                        style="-fx-background: #0d0d0d; -fx-background-color: #0d0d0d;
+                               -fx-border-color: transparent;"
+                        VBox.vgrow="ALWAYS">
+                <FlowPane fx:id="viniliGrid" hgap="20" vgap="20"
+                          style="-fx-background-color: #0d0d0d; -fx-padding: 10;" />
+            </ScrollPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-color: #0d0d0d;"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/25"
+            fx:controller="VynilStore.AggiungiController">
+
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16"
+              style="-fx-background-color: #141414;
+                     -fx-border-color: #c9a84c;
+                     -fx-border-width: 0 0 1 0;
+                     -fx-padding: 20 30 20 30;">
+            <Button text="← Torna al catalogo" onAction="#handleTorna"
+                    style="-fx-background-color: transparent; -fx-text-fill: #888888;
+                           -fx-font-size: 11px; -fx-border-color: #2a2a2a;
+                           -fx-border-width: 1; -fx-background-radius: 0;
+                           -fx-padding: 8 14 8 14; -fx-cursor: hand;" />
+            <Label text="＋  AGGIUNGI VINILE"
+                   style="-fx-text-fill: #c9a84c; -fx-font-size: 20px; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <!-- FORM -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="0"
+              style="-fx-background-color: #0d0d0d;">
+            <padding><Insets top="40" left="0" right="0" bottom="0" /></padding>
+
+            <GridPane hgap="16" vgap="20"
+                      style="-fx-background-color: #141414;
+                             -fx-border-color: #2a2a2a;
+                             -fx-border-width: 1;
+                             -fx-padding: 30;">
+
+                <!-- ID -->
+                <Label text="ID" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="fId" promptText="es. 001"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px; -fx-pref-width: 340;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <!-- TITOLO -->
+                <Label text="Titolo" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="fTitolo" promptText="es. Dark Side of the Moon"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <!-- ARTISTA -->
+                <Label text="Artista" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="fArtista" promptText="es. Pink Floyd"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <!-- ANNO -->
+                <Label text="Anno" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="fAnno" promptText="es. 1973"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <!-- GENERE -->
+                <Label text="Genere" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextField fx:id="fGenere" promptText="es. Rock"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <!-- PREZZO -->
+                <Label text="Prezzo (€)" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <TextField fx:id="fPrezzo" promptText="es. 24.99"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <!-- IMMAGINE -->
+                <Label text="Immagine" style="-fx-text-fill: #555555; -fx-font-size: 11px;" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <TextField fx:id="fImmagine" promptText="es. darkside.jpg"
+                           style="-fx-background-color: #0d0d0d; -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #333333; -fx-border-color: #2a2a2a;
+                                  -fx-border-width: 0 0 1 0; -fx-background-radius: 0;
+                                  -fx-padding: 8 4 8 4; -fx-font-size: 13px;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                <!-- Messaggio errore -->
+                <Label fx:id="messaggioLabel" text=""
+                       style="-fx-text-fill: #c0392b; -fx-font-size: 11px;"
+                       GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- BOTTONI -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="12"
+              style="-fx-background-color: #141414;
+                     -fx-border-color: #2a2a2a;
+                     -fx-border-width: 1 0 0 0;
+                     -fx-padding: 20 30 20 30;">
+            <Button text="Annulla" onAction="#handleTorna"
+                    style="-fx-background-color: transparent; -fx-text-fill: #888888;
+                           -fx-font-size: 11px; -fx-border-color: #2a2a2a;
+                           -fx-border-width: 1; -fx-background-radius: 0;
+                           -fx-padding: 10 24 10 24; -fx-cursor: hand;" />
+            <Button text="✓  Salva" onAction="#handleSalva"
+                    style="-fx-background-color: #c9a84c; -fx-text-fill: #0d0d0d;
+                           -fx-font-size: 13px; -fx-font-weight: bold;
+                           -fx-background-radius: 0; -fx-padding: 10 30 10 30; -fx-cursor: hand;" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
